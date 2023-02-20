@@ -1,0 +1,8 @@
+@import '../../assets/styles/mixins/breakpoints';
+
+.content {
+    padding: 56px 48px 200px;
+    @include mobile {
+        padding: 40px 24px 80px;
+    }
+}

@@ -1,0 +1,299 @@
+@import '../../assets/styles/mixins/breakpoints';
+@import '../../assets/styles/global/settings/variables';
+@import '../../assets/styles/mixins/container';
+@import '../../assets/styles/global/base/animations';
+
+:root {
+    --appBarHeight: 96px;
+    @include tablet {
+        --appBarHeight: 68px;
+    }
+}
+
+.app_bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--appBarHeight);
+    box-sizing: initial;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+    font-family: $font-family-base;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1em;
+    z-index: 10;
+
+    &_active {
+        z-index: 11;
+    }
+
+    &.fixed_bar {
+        box-shadow: 0 0 6px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    @include tablet {
+        height: 68px;
+        border: none;
+        font-size: 16px;
+        line-height: 1em;
+    }
+}
+
+.container {
+    @extend .container;
+
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    svg {
+        path {
+            transition: $trans-def;
+        }
+
+        @include mobile {
+            width: 117px;
+        }
+
+        &:hover {
+            path {
+                fill: $color-accent;
+            }
+        }
+    }
+}
+
+.menu {
+    display: flex;
+
+    > a {
+        transition: $trans-def;
+        color: $color-light;
+
+        &:not(:last-child) {
+            margin-right: 32px;
+        }
+
+        &:hover {
+            color: $color-accent;
+        }
+    }
+
+    @include tablet {
+        display: none;
+    }
+}
+
+.settings {
+    display: flex;
+    align-items: center;
+}
+
+.locale {
+    position: relative;
+    margin-right: 10px;
+    cursor: pointer;
+
+    &_active {
+        > div > svg {
+            transform: rotate(90deg);
+        }
+    }
+
+    &__switcher {
+        display: flex;
+        align-items: center;
+        color: white;
+        text-transform: capitalize;
+        transition: $trans-def;
+
+        &:hover {
+            color: $color-accent;
+
+            > svg path {
+                stroke: $color-accent;
+            }
+        }
+
+        > svg {
+            width: 6px;
+            margin: 0 10px;
+            transform: rotate(270deg);
+            transition: $trans-def;
+
+            path {
+                fill: none !important;
+                stroke: white;
+                transition: $trans-def;
+            }
+        }
+    }
+
+    &__list {
+        position: absolute;
+        top: 100%;
+        visibility: hidden;
+        opacity: 0;
+        transition: $trans-def;
+
+        padding: 14px 8px;
+        border-radius: 3px;
+        margin: 8px 0 0 -8px;
+        background-color: white;
+        box-shadow: 0 0 6px 5px rgba(0, 0, 0, 0.15);
+
+        .locale_active & {
+            height: auto;
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    &__list_item {
+        display: flex;
+        font-size: 16px;
+        font-weight: 300;
+        color: $color-accent-dark;
+        transition: $trans-def;
+
+        svg {
+            margin-right: 8px;
+        }
+
+        &:hover {
+            color: $color-accent;
+        }
+    }
+}
+
+.profile {
+    cursor: pointer;
+
+    @include tablet {
+        display: none;
+    }
+}
+
+.profile_icon {
+    position: relative;
+
+    &:hover {
+        path {
+            fill: $color-accent;
+        }
+    }
+}
+
+.profile_menu {
+    a,
+    li {
+        font-family: $font-family-base;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        color: $color-accent-dark;
+    }
+}
+
+.signIn_button {
+    white-space: nowrap;
+}
+
+.burger {
+    display: none;
+
+    @include tablet {
+        display: block;
+    }
+
+    margin-left: 16px;
+    padding: 8px 0 8px 6px;
+    width: 26px;
+    height: 32px;
+    cursor: pointer;
+
+    > div {
+        width: 20px;
+        height: 2px;
+        border-radius: 1px;
+        background-color: $color-light;
+
+        &:not(:last-child) {
+            margin-bottom: 5px;
+        }
+    }
+}
+
+.mobile_menu {
+    display: none;
+
+    &.mobile_menu_active {
+        @include tablet {
+            display: block;
+        }
+    }
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 18px var(--container-padding-size) var(--container-padding-size);
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    background-color: $color-accent-dark;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        height: 27px;
+    }
+
+    &__close {
+        position: relative;
+        top: 3px;
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+
+        > div {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 23px;
+            height: 2px;
+            transform: translate(-50%, -50%) rotate(45deg);
+            border-radius: 1px;
+            background-color: $color-light;
+
+            &:last-child {
+                transform: translate(-50%, -50%) rotate(135deg);
+            }
+        }
+    }
+
+    &__main {
+        margin-top: 65px;
+        display: flex;
+        flex-direction: column;
+        font-size: 32px;
+        line-height: 0.88em;
+
+        > * {
+            color: $color-light;
+            cursor: pointer;
+
+            &:not(:last-child) {
+                margin-bottom: 40px;
+            }
+        }
+    }
+}

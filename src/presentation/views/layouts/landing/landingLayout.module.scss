@@ -1,0 +1,22 @@
+@import '../../assets/styles/global/settings/colors';
+
+.container {
+    padding-top: var(--appBarHeight);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.page {
+    flex-grow: 1;
+}
+
+.footer {
+    min-height: var(--appBarHeight);
+    background-color: $color-accent-dark;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    color: $color-accent;
+}

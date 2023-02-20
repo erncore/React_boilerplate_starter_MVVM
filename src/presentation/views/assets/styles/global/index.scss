@@ -1,0 +1,168 @@
+// base
+@import 'base/reset';
+
+// settings
+@import 'settings/variables';
+@import 'settings/colors';
+
+// mixins
+@import '../mixins/index.scss';
+
+@import 'base/fonts';
+@import 'base/typography';
+@import 'base/animations';
+
+// Не вызывает performance issues https://stackoverflow.com/questions/37444066/is-applying-a-css-transition-on-all-elements-a-performance-concern
+// Исключения добавляются через :not()
+body {
+    font-family: $font-family-base;
+
+    /* Mui Button*/
+    .btn {
+        &--lg {
+            width: 408px;
+        }
+
+        &--max-tablet {
+            @include tablet {
+                width: 100%;
+            }
+        }
+
+        &--circle {
+            width: 80px;
+            height: 80px;
+
+            @include tablet {
+                width: 72px;
+                height: 72px;
+            }
+
+            @include mobile {
+                width: 64px;
+                height: 64px;
+            }
+
+            &--sm {
+                min-width: initial;
+            }
+        }
+
+        &--trans {
+            background-color: transparent;
+            border: 1px solid rgba(0, 185, 255, 0.4);
+
+            @include mobile {
+                &:not(:disabled):hover {
+                    background-color: inherit;
+                }
+            }
+
+            &:not(:disabled):hover {
+                background-color: $color-accent;
+                border-color: $color-accent;
+
+                svg {
+                    path {
+                        stroke: $color-light;
+                    }
+                }
+            }
+
+            &:disabled {
+                path {
+                    stroke: #afb4c5;
+                }
+            }
+        }
+
+        &--rotate {
+            transform: rotate(180deg);
+        }
+    }
+
+    .btn-login {
+        width: 109px;
+        height: 48px;
+        border: 1px solid rgba(white, 0.4);
+        background-color: transparent;
+        cursor: pointer;
+
+        &:hover {
+            color: $color-accent-reverse;
+            background-color: white;
+        }
+    }
+
+    /* Mui Autocomplete*/
+
+    .search-bar {
+        .MuiInput-root.Mui-focused input,
+        .MuiAutocomplete-hasClearIcon input {
+            margin-top: 20px;
+
+            @include mobile {
+                margin-top: 3px;
+            }
+        }
+
+        .MuiAutocomplete-popper + label,
+        .MuiAutocomplete-hasClearIcon + label {
+            margin-top: -13px;
+            font-size: 14px;
+            line-height: 14px;
+
+            @include mobile {
+                margin-top: -18px;
+            }
+        }
+
+        .MuiAutocomplete-clearIndicator {
+            margin-right: 0;
+
+            svg {
+                width: 10px;
+
+                path {
+                    stroke-opacity: 1;
+                }
+            }
+        }
+    }
+
+    .filters-bar,
+    .search-bar {
+        .MuiIconButton-root {
+            margin-top: 5px;
+        }
+
+        .MuiAutocomplete-clearIndicator {
+            margin-right: -7px;
+            padding: 0 5px 1px;
+            border-radius: 0;
+            visibility: visible;
+        }
+    }
+
+    .filters-bar {
+        .MuiAutocomplete-popper {
+            max-height: 200px;
+            overflow-y: scroll;
+            box-shadow: 0 0 6px 5px rgba(0, 0, 0, 0.15);
+        }
+    }
+
+    /* Mui Select*/
+    .MuiSelect-standard {
+        font-family: $font-family-base;
+        font-size: 14px;
+        line-height: 16px;
+        background-color: transparent !important;
+    }
+
+    .MuiMenu-paper li {
+        font-family: $font-family-base;
+        font-size: 16px;
+        line-height: 16px;
+    }
+}

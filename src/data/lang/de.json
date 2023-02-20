@@ -1,0 +1,25 @@
+{
+    "app.header.signIn": "Sign in De",
+    "app.header.logOut": "Log out De",
+
+    "auth.signin.signIn": "Sign in De",
+    "auth.signin.logOut": "Log out De",
+    "auth.signin.email": "Email Address De",
+    "auth.signin.password": "Password De",
+    "auth.signin.forgotPassword": "Forgot password? De",
+    "auth.signin.createAccount": "Create an account De",
+    "auth.signin.signInAccount": "Already have an account? Sign in De",
+
+    "auth.signup.title": "Sign up De",
+    "auth.signup.email": "Email Address De",
+    "auth.signup.password": "Password De",
+    "auth.signup.confirmPassword": "Confirm Password De",
+    "auth.signup.terms": "I have read and accept Terms of Use and Privacy Policy. De",
+    "auth.signup.button": "Sign Up De",
+    "auth.signup.registered": "Already have an account? Sign in De",
+
+    "auth.forgotPassword.title": "Forgot Password? De",
+    "auth.forgotPassword.description": "Enter your E-mail and we will send you link to reset your password De",
+    "auth.forgotPassword.email": "Email Address De",
+    "auth.forgotPassword.button": "Save De"
+}

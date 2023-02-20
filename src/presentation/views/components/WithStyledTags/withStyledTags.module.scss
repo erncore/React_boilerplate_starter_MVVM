@@ -1,0 +1,154 @@
+@import '../../assets/styles/global/settings/variables';
+@import '../../assets/styles/mixins/breakpoints';
+
+.with_styled_tags {
+    h2 {
+        margin: 80px 0 56px;
+        font-size: 56px;
+        font-weight: 700;
+        line-height: 52px;
+
+        @include tablet {
+            margin: 56px 0 40px;
+            font-size: 40px;
+            line-height: 36px;
+        }
+    }
+
+    h3,
+    h4 {
+        margin: 80px 0 40px;
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 44px;
+
+        @include tablet {
+            margin: 56px 0 32px;
+            font-size: 32px;
+            line-height: 28px;
+        }
+    }
+
+    h4 {
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 36px;
+
+        @include tablet {
+            font-size: 24px;
+            line-height: 20px;
+        }
+    }
+
+    h5 {
+        margin: 80px 0 24px;
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 28px;
+
+        @include tablet {
+            margin-top: 56px;
+            font-size: 20px;
+            line-height: 16px;
+        }
+    }
+
+    p {
+        margin-bottom: 24px;
+        line-height: 26px;
+
+        @include tablet {
+            margin-bottom: 16px;
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    a {
+        color: $color-accent;
+        text-decoration: underline;
+
+        &:hover {
+            color: $color-accent-reverse;
+            text-decoration: none;
+        }
+    }
+
+    li {
+        margin-bottom: 16px;
+        line-height: 26px;
+    }
+
+    ul {
+        margin: 32px 0;
+
+        li {
+            position: relative;
+            padding-left: 44px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 8px;
+                left: 0;
+                display: block;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background-color: $color-accent;
+            }
+
+            @include tablet {
+                padding-left: 32px;
+            }
+        }
+    }
+
+    ol {
+        margin: 32px 0;
+        counter-reset: item;
+
+        li:before {
+            content: counters(item, '.') '. ';
+            margin-right: 12px;
+            display: inline-block;
+            width: 32px;
+            counter-increment: item;
+            color: $color-accent;
+
+            @include tablet {
+                margin-right: 0;
+            }
+        }
+    }
+
+    table {
+        width: 100%;
+
+        th {
+            padding: 14px 5px;
+            text-align: start;
+            color: rgba(5, 20, 75, 0.64);
+        }
+
+        td {
+            padding: 32px 5px;
+        }
+
+        tr:not(:last-of-type),
+        thead {
+            border-bottom: 1px solid #e1e3e9;
+        }
+
+        @include tablet {
+            th,
+            td {
+                padding: 10px 4px;
+            }
+        }
+    }
+}

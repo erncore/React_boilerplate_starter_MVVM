@@ -1,0 +1,24 @@
+@import './breakpoints';
+
+.container {
+    --container-width: 1248px;
+    --container-padding-size: 96px;
+
+    @include tablet {
+        --container-padding-size: 36px;
+    }
+    @include mobile {
+        --container-padding-size: 24px;
+    }
+
+    margin: 0 auto;
+    padding: 0 var(--container-padding-size);
+    width: 100%;
+    max-width: calc(var(--container-width) + var(--container-padding-size) * 2);
+    box-sizing: border-box;
+}
+
+.container-lg {
+    @extend .container;
+    --container-width: 100%;
+}

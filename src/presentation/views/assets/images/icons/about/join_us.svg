@@ -1,0 +1,37 @@
+<svg  viewBox="0 0 480 288" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_3903_21027" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="480" height="288">
+<circle cx="48" cy="48" r="48" fill="#00B9FF"/>
+<circle cx="336" cy="48" r="48" fill="#00B9FF"/>
+<circle cx="48" cy="144" r="48" fill="#00B9FF"/>
+<circle cx="48" cy="240" r="48" fill="#00B9FF"/>
+<circle cx="336" cy="144" r="48" fill="#00B9FF"/>
+<circle cx="336" cy="240" r="48" fill="#00B9FF"/>
+<circle cx="144" cy="48" r="48" fill="#00B9FF"/>
+<circle cx="432" cy="48" r="48" fill="#00B9FF"/>
+<circle cx="240" cy="48" r="48" fill="#00B9FF"/>
+<circle cx="144" cy="144" r="48" fill="#00B9FF"/>
+<circle cx="144" cy="240" r="48" fill="#00B9FF"/>
+<circle cx="432" cy="144" r="48" fill="#00B9FF"/>
+<circle cx="432" cy="240" r="48" fill="#00B9FF"/>
+<circle cx="240" cy="144" r="48" fill="#00B9FF"/>
+<circle cx="240" cy="240" r="48" fill="#00B9FF"/>
+</mask>
+<g mask="url(#mask0_3903_21027)">
+<circle cx="48" cy="48" r="48" fill="#00B9FF"/>
+<circle cx="336" cy="48" r="48" fill="#00B9FF"/>
+<circle cx="48" cy="144" r="48" fill="#00B9FF"/>
+<circle cx="48" cy="240" r="48" fill="#00B9FF"/>
+<circle cx="336" cy="144" r="48" fill="#00B9FF"/>
+<circle cx="336" cy="240" r="48" fill="#00B9FF"/>
+<circle cx="144" cy="48" r="48" fill="#00B9FF"/>
+<circle cx="432" cy="48" r="48" fill="#00B9FF"/>
+<circle cx="240" cy="48" r="48" fill="#00B9FF"/>
+<circle cx="144" cy="144" r="48" fill="#00B9FF"/>
+<circle cx="144" cy="240" r="48" fill="#00B9FF"/>
+<circle cx="432" cy="144" r="48" fill="#00B9FF"/>
+<circle cx="432" cy="240" r="48" fill="#00B9FF"/>
+<circle cx="240" cy="144" r="48" fill="#00B9FF"/>
+<circle cx="240" cy="240" r="48" fill="#00B9FF"/>
+<circle cx="240" cy="144" r="144" fill="white"/>
+</g>
+</svg>
